@@ -31,4 +31,9 @@ public class HomeController {
         return postDao.findAll();
     }
 
+    @GetMapping ("/home")
+    public String welcome() {
+        return "home";
+    }
+
 }
