@@ -16,4 +16,11 @@ h1 .h1 {
     color: black;
 
 
+.page-footer.panel-custom {
+    background-color: #222222;
+    color: white;
+}
+
+hr {
+    color: #6351ce;
 }
