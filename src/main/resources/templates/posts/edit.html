@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: main-header('Edit Post')">
+    <meta charset="UTF-8"/>
+
+</head>
+<body>
+
+    <div th:replace="fragments/navbar ::mainNavbar"></div>
+    <form action="/post/edit" method="post" th:object="${post}" >
+        <input type="hidden" th:field="*{id}"/>
+        Title:
+        <input th:fiel="*{title}"/>
+    </form>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form method="post" th:action="@{/posts/{id}/delete(id=${post.id})}">
+                <input type="submit" class="btn" value="delete">
+
+            </form>
+
+        </div>
+    </div>
+    <footer th:include="fragments/footer :: footer"></footer>
+    <div th:replace="fragments/scripts :: scripts"></div>
+</body>
+</html>

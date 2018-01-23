@@ -1,0 +1,19 @@
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    border-bottom-color: rgb(99,81,206);
+    color: #6351ce;
+    height: 0;
+    background-color: #6351ce;
+}
+
+h1 .h1 {
+    font-size: 36px;
+    color: black;
+
+
+}
