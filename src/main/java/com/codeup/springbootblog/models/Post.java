@@ -7,22 +7,42 @@ import javax.persistence.*;
 
 public class Post {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
 
     private long id;
 
-    @Column(nullable =false)
+    @Column(nullable = false)
     private String title;
 
 
     @Column(columnDefinition = "TEXT")
     private String body;
 
-    public Post(String title, String body) {
+
+    @ManyToOne
+    private User user;
+
+
+
+
+    public Post(Long id ,String title, String body) {
+        this.id = id;
         this.title = title;
         this.body = body;
     }
-    public Post() { }
+    public Post() {
+
+    }
+    public Long getId() {
+
+        return id;
+    }
+
+    public void setId(Long id) {
+
+        this.id = id;
+    }
 
     public String getTitle() {
 
@@ -34,8 +54,24 @@ public class Post {
         this.title = title;
     }
 
-    public String getDescription() {
+    public String getBody() {
 
         return body;
     }
+
+    public void setBody(String body) {
+
+        this.body = body;
+    }
+
+    public User getUser() {
+
+        return user;
+    }
+
+    public void setUser(User user) {
+
+        this.user = user;
+    }
+
 }
