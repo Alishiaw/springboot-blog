@@ -1,8 +1,10 @@
-package com.codeup.springbootblog;
+package com.codeup.controllers;
 
-import com.codeup.springbootblog.models.Post;
+import com.codeup.models.Post;
 
-import com.codeup.springbootblog.models.User;
+import com.codeup.models.User;
+import com.codeup.repositories.PostRepository;
+import com.codeup.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +54,7 @@ public class PostsController {
 
     public String createPost(@ModelAttribute Post post) {
         User user = userRepository.findOne(2L);
-        post.setOwner(user);
+        post.setUser(user);
         postsDao.save(post);
 
         return "redirect:/posts";
