@@ -1,4 +1,4 @@
-package com.codeup.springbootblog.models;
+package com.codeup.models;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,6 +21,16 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
+
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
+
+
 
 
     public User(String username, String email, String password) {

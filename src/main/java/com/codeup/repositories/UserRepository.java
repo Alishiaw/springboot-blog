@@ -1,10 +1,10 @@
-package com.codeup.springbootblog;
+package com.codeup.repositories;
 
-import com.codeup.springbootblog.models.Post;
-import com.codeup.springbootblog.models.User;
+import com.codeup.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
+User findByUsername(String username);
 
 }
